@@ -1,24 +1,80 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Header } from "@/components/site/Header";
+import { Hero } from "@/components/site/Hero";
+import { About } from "@/components/site/About";
+import { Ceo } from "@/components/site/Ceo";
+import { Services } from "@/components/site/Services";
+import { Achievements } from "@/components/site/Achievements";
+import { WhyUs } from "@/components/site/WhyUs";
+import { Media } from "@/components/site/Media";
+import { Testimonials } from "@/components/site/Testimonials";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { FloatingActions } from "@/components/site/FloatingActions";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const title = "Datta Infotech Consultants | Cyber Security & Homeland Security";
+const description =
+  "Cyber Security, Digital Forensics, Homeland Security and Government Advisory services from Datta Infotech Consultants, Nalgonda, Telangana, India.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title },
+      { name: "description", content: description },
+      { property: "og:title", content: title },
+      { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Datta Infotech Consultants",
+          description,
+          telephone: "+91 76809 20411",
+          email: "info.dattainfotech@gmail.com",
+          slogan: "Securing the Future Through Technology, Intelligence & Innovation",
+          areaServed: "Worldwide",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Nalgonda",
+            addressRegion: "Telangana",
+            addressCountry: "IN",
+          },
+          founder: {
+            "@type": "Person",
+            name: "Adoni Venkata Ramana Rao",
+            jobTitle: "Founder & CEO",
+          },
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main>
+        <Hero />
+        <About />
+        <Ceo />
+        <Services />
+        <Achievements />
+        <WhyUs />
+        <Media />
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+      <FloatingActions />
     </div>
   );
 }
