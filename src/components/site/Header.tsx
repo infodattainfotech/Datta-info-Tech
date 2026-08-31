@@ -35,12 +35,10 @@ export function Header() {
 
       <div
         className={cn(
-          "border-b transition-all duration-300",
-          scrolled
-            ? "border-border bg-background/90 backdrop-blur-xl shadow-elegant"
-            : "border-transparent bg-background/70 backdrop-blur-md",
+          "border-b bg-background transition-shadow duration-300",
+          scrolled ? "border-border shadow-elegant" : "border-border/60",
         )}
-      >
+      
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
           <a href="#home" className="flex items-center gap-3">
             <span className="grid size-10 place-items-center rounded-md bg-gradient-navy">
