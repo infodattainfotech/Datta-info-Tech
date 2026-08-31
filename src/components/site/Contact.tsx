@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeading } from "./SectionHeading";
 import { CONTACT } from "./data";
+import { CEO_NAME, CEO_PHOTO_URL, CEO_ROLE, LOGO_URL } from "./brand";
 
 export function Contact() {
   const [submitting, setSubmitting] = useState(false);
@@ -51,9 +52,13 @@ export function Contact() {
         <div className="mt-14 grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-5">
             <div className="rounded-lg bg-gradient-navy p-8 shadow-elegant">
-              <h3 className="text-xl font-semibold text-navy-foreground">
-                Datta Infotech Consultants
-              </h3>
+              <span className="inline-flex rounded-md bg-navy-foreground/95 px-3 py-2">
+                <img
+                  src={LOGO_URL}
+                  alt="Datta Infotech Consultants logo"
+                  className="h-9 w-auto"
+                />
+              </span>
               <div className="mt-6 space-y-5 text-sm">
                 <p className="flex items-start gap-3 text-navy-foreground/80">
                   <MapPin className="mt-0.5 size-5 shrink-0 text-gold" /> {CONTACT.address}
@@ -106,6 +111,22 @@ export function Contact() {
                     <Icon className="size-4" />
                   </a>
                 ))}
+              </div>
+            </div>
+
+            <div className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 shadow-elegant transition-all duration-300 hover:-translate-y-1">
+              <img
+                src={CEO_PHOTO_URL}
+                alt={`${CEO_NAME}, ${CEO_ROLE} of Datta Infotech Consultants`}
+                loading="lazy"
+                className="size-20 rounded-md border border-gold/40 object-cover"
+              />
+              <div>
+                <p className="text-xs uppercase tracking-[0.18em] text-accent">{CEO_ROLE}</p>
+                <p className="mt-1 text-base font-semibold">{CEO_NAME}</p>
+                <p className="mt-1 text-xs text-muted-foreground">
+                  Direct advisory enquiries welcome.
+                </p>
               </div>
             </div>
 
