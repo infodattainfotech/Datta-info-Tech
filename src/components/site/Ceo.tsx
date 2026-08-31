@@ -1,7 +1,7 @@
 import { Award, BadgeCheck, Mic, Quote } from "lucide-react";
 import { SectionHeading } from "./SectionHeading";
 import { CEO_HIGHLIGHTS, CEO_TIMELINE, CERTIFICATIONS } from "./data";
-import ceoPortrait from "@/assets/ceo-portrait.jpg";
+import { CEO_PHOTO_URL, LOGO_URL } from "./brand";
 
 export function Ceo() {
   return (
@@ -16,15 +16,28 @@ export function Ceo() {
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[0.85fr_1.15fr]">
           <div>
-            <div className="overflow-hidden rounded-lg glass-panel p-3">
+            <div className="overflow-hidden rounded-lg border border-gold/30 glass-panel p-3 shadow-gold transition-all duration-300 hover:-translate-y-1">
               <img
-                src={ceoPortrait}
+                src={CEO_PHOTO_URL}
                 alt="Adoni Venkata Ramana Rao, Founder and CEO of Datta Infotech Consultants"
-                width={912}
-                height={1104}
+                width={1252}
+                height={1252}
                 loading="lazy"
-                className="w-full rounded-md object-cover"
+                className="aspect-square w-full rounded-md object-cover"
               />
+              <div className="mt-3 flex items-center justify-between gap-3 px-1 pb-1">
+                <span className="leading-tight">
+                  <span className="block text-sm font-semibold text-navy-foreground">
+                    Adoni Venkata Ramana Rao
+                  </span>
+                  <span className="block text-xs uppercase tracking-[0.18em] text-gold">
+                    Founder &amp; CEO
+                  </span>
+                </span>
+                <span className="rounded-md bg-navy-foreground/95 p-1.5">
+                  <img src={LOGO_URL} alt="Datta Infotech Consultants logo" className="h-5 w-auto" />
+                </span>
+              </div>
             </div>
             <div className="mt-5 rounded-lg glass-panel p-6">
               <p className="flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-gold">

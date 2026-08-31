@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Mail, Menu, Phone, ShieldCheck, X } from "lucide-react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CONTACT, NAV_LINKS } from "./data";
+import { LOGO_URL } from "./brand";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -87,6 +88,13 @@ export function Header() {
 
         {open && (
           <div className="border-t border-border bg-background lg:hidden">
+            <div className="mx-auto flex max-w-7xl items-center gap-3 px-6 pt-4">
+              <img
+                src={LOGO_URL}
+                alt="Datta Infotech Consultants logo"
+                className="h-8 w-auto"
+              />
+            </div>
             <ul className="mx-auto max-w-7xl px-6 py-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href} className="border-b border-border/60 last:border-0">
