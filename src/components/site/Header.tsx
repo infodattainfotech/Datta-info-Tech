@@ -42,13 +42,14 @@ export function Header() {
 
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
           <a href="#home" className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-md bg-gradient-navy">
-              <ShieldCheck className="size-5 text-gold" />
-            </span>
-            <span className="leading-tight">
-              <span className="block font-display text-base font-semibold tracking-tight">
-                Datta<span className="text-gradient-gold">Infotech</span>
-              </span>
+            <img
+              src={LOGO_URL}
+              alt="Datta Infotech Consultants logo"
+              width={913}
+              height={325}
+              className="h-9 w-auto sm:h-11"
+            />
+            <span className="hidden leading-tight sm:block">
               <span className="block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                 Consultants
               </span>
