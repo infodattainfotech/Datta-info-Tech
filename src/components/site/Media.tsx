@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { MEDIA_ITEMS } from "./data";
+import { CEO_NAME, CEO_PHOTO_URL, CEO_ROLE } from "./brand";
 
 export function Media() {
   return (
@@ -19,7 +20,30 @@ export function Media() {
           description="Coverage of publications, honours, conference participation, and public safety contributions."
         />
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-8 rounded-lg border border-border bg-card p-8 shadow-elegant md:grid-cols-[auto_1fr] md:items-center">
+          <img
+            src={CEO_PHOTO_URL}
+            alt={`${CEO_NAME}, ${CEO_ROLE} of Datta Infotech Consultants`}
+            width={1252}
+            height={1252}
+            loading="lazy"
+            className="size-36 rounded-lg border-2 border-gold/40 object-cover shadow-gold transition-transform duration-300 hover:scale-[1.02] md:size-44"
+          />
+          <div>
+            <span className="text-xs font-semibold uppercase tracking-[0.16em] text-accent">
+              Featured in the press
+            </span>
+            <h3 className="mt-2 text-xl font-semibold">
+              {CEO_NAME} — {CEO_ROLE}
+            </h3>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+              Regularly featured in newspaper publications and international conferences for cyber
+              security awareness, homeland security leadership, and public safety initiatives.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {MEDIA_ITEMS.slice(0, 3).map((item) => (
             <article
               key={item.title}

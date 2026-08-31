@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { Mail, Menu, Phone, ShieldCheck, X } from "lucide-react";
+import { Mail, Menu, Phone, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CONTACT, NAV_LINKS } from "./data";
+import { LOGO_URL } from "./brand";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -42,13 +43,14 @@ export function Header() {
 
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
           <a href="#home" className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-md bg-gradient-navy">
-              <ShieldCheck className="size-5 text-gold" />
-            </span>
-            <span className="leading-tight">
-              <span className="block font-display text-base font-semibold tracking-tight">
-                Datta<span className="text-gradient-gold">Infotech</span>
-              </span>
+            <img
+              src={LOGO_URL}
+              alt="Datta Infotech Consultants logo"
+              width={913}
+              height={325}
+              className="h-9 w-auto sm:h-11"
+            />
+            <span className="hidden leading-tight sm:block">
               <span className="block text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
                 Consultants
               </span>
@@ -86,6 +88,13 @@ export function Header() {
 
         {open && (
           <div className="border-t border-border bg-background lg:hidden">
+            <div className="mx-auto flex max-w-7xl items-center gap-3 px-6 pt-4">
+              <img
+                src={LOGO_URL}
+                alt="Datta Infotech Consultants logo"
+                className="h-8 w-auto"
+              />
+            </div>
             <ul className="mx-auto max-w-7xl px-6 py-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href} className="border-b border-border/60 last:border-0">

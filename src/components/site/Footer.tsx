@@ -1,5 +1,6 @@
-import { Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { CONTACT, NAV_LINKS } from "./data";
+import { LOGO_URL } from "./brand";
 
 export function Footer() {
   return (
@@ -7,11 +8,12 @@ export function Footer() {
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-3">
         <div>
           <div className="flex items-center gap-3">
-            <span className="grid size-10 place-items-center rounded-md glass-panel">
-              <ShieldCheck className="size-5 text-gold" />
-            </span>
-            <span className="font-display text-lg font-semibold text-navy-foreground">
-              Datta Infotech Consultants
+            <span className="rounded-md bg-navy-foreground/95 p-2.5">
+              <img
+                src={LOGO_URL}
+                alt="Datta Infotech Consultants logo"
+                className="h-9 w-auto"
+              />
             </span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-navy-foreground/70">
