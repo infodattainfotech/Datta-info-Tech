@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CalendarDays, Maximize2, Newspaper, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import awardAsset from "@/assets/future-homeland-security-award.jpg.asset.json";
@@ -55,6 +55,15 @@ export function MediaGallery() {
   const [selected, setSelected] = useState<(typeof items)[number] | null>(null);
   const visibleItems = filter === "All Coverage" ? items : items.filter((item) => item.categories.includes(filter));
 
+  useEffect(() => {
+    if (!selected) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSelected(null);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selected]);
+
   return (
     <section className="section-pad bg-background">
       <div className="mx-auto max-w-7xl px-6">
@@ -84,7 +93,7 @@ export function MediaGallery() {
       </div>
 
       {selected && (
-        <div className="fixed inset-0 z-[70] grid place-items-center bg-primary/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={selected.title} onClick={() => setSelected(null)} onKeyDown={(event) => event.key === "Escape" && setSelected(null)}>
+        <div className="fixed inset-0 z-[70] grid place-items-center bg-primary/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={selected.title} onClick={() => setSelected(null)}>
           <div className="relative max-h-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <Button variant="gold" size="icon" className="absolute right-3 top-3 z-10" onClick={() => setSelected(null)} aria-label="Close enlarged clipping"><X /></Button>
             <img src={selected.image} alt={`Enlarged newspaper clipping: ${selected.title}`} className="max-h-[88vh] max-w-full rounded-md bg-card object-contain shadow-elegant" />

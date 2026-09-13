@@ -1,13 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero } from "@/components/site/Hero";
 import { Services } from "@/components/site/Services";
-import { Achievements } from "@/components/site/Achievements";
 import { WhyUs } from "@/components/site/WhyUs";
 import { Testimonials } from "@/components/site/Testimonials";
 import { LeadershipPreview } from "@/components/site/LeadershipPreview";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
-const title = "Datta Infotech Consultants | Cyber Security & Homeland Security";
+const title = "Datta Infotech | Cyber & Homeland Security";
 const description =
   "Cyber Security, Digital Forensics, Homeland Security and Government Advisory services from Datta Infotech Consultants, Nalgonda, Telangana, India.";
 
@@ -60,7 +59,6 @@ function Index() {
         <Services />
         <LeadershipPreview />
         <WhyUs />
-        <Achievements />
         <Testimonials />
     </SiteLayout>
   );
