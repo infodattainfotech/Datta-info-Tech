@@ -1,18 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
-import { About } from "@/components/site/About";
-import { Ceo } from "@/components/site/Ceo";
 import { Services } from "@/components/site/Services";
-import { Achievements } from "@/components/site/Achievements";
 import { WhyUs } from "@/components/site/WhyUs";
-import { Media } from "@/components/site/Media";
 import { Testimonials } from "@/components/site/Testimonials";
-import { Contact } from "@/components/site/Contact";
-import { Footer } from "@/components/site/Footer";
-import { FloatingActions } from "@/components/site/FloatingActions";
+import { LeadershipPreview } from "@/components/site/LeadershipPreview";
+import { SiteLayout } from "@/components/site/SiteLayout";
 
-const title = "Datta Infotech Consultants | Cyber Security & Homeland Security";
+const title = "Datta Infotech | Cyber & Homeland Security";
 const description =
   "Cyber Security, Digital Forensics, Homeland Security and Government Advisory services from Datta Infotech Consultants, Nalgonda, Telangana, India.";
 
@@ -60,21 +54,12 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <div className="min-h-screen bg-background">
-      <Header />
-      <main>
+    <SiteLayout>
         <Hero />
-        <About />
-        <Ceo />
         <Services />
-        <Achievements />
+        <LeadershipPreview />
         <WhyUs />
-        <Media />
         <Testimonials />
-        <Contact />
-      </main>
-      <Footer />
-      <FloatingActions />
-    </div>
+    </SiteLayout>
   );
 }

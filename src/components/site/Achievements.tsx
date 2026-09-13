@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { SectionHeading } from "./SectionHeading";
 import { ACHIEVEMENTS, COUNTERS } from "./data";
-import { CEO_NAME, CEO_PHOTO_URL, CEO_ROLE } from "./brand";
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -58,28 +57,6 @@ export function Achievements() {
               </p>
             </div>
           ))}
-        </div>
-
-        <div className="mt-10 grid gap-8 rounded-lg border border-gold/25 glass-panel p-8 md:grid-cols-[auto_1fr] md:items-center">
-          <img
-            src={CEO_PHOTO_URL}
-            alt={`${CEO_NAME}, ${CEO_ROLE} of Datta Infotech Consultants`}
-            width={1252}
-            height={1252}
-            loading="lazy"
-            className="size-40 rounded-lg border border-gold/40 object-cover shadow-gold transition-transform duration-300 hover:scale-[1.02] md:size-48"
-          />
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-gold">{CEO_ROLE}</p>
-            <h3 className="mt-2 font-display text-2xl font-semibold text-navy-foreground">
-              {CEO_NAME}
-            </h3>
-            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-navy-foreground/75">
-              Honoured with a Homeland Security Technology Award and recognised internationally for
-              contributions to cybercrime prevention, digital forensics investigation support, and
-              national security advisory programs.
-            </p>
-          </div>
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

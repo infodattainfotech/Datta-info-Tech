@@ -23,13 +23,11 @@ export const CONTACT = {
 };
 
 export const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "CEO", href: "#ceo" },
-  { label: "Services", href: "#services" },
-  { label: "Achievements", href: "#achievements" },
-  { label: "Media", href: "#media" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Services", href: "/#services" },
+  { label: "Media", href: "/media" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export const SERVICES = [

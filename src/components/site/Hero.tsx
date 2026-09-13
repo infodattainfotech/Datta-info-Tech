@@ -1,7 +1,8 @@
 import { ArrowRight, Globe2, Landmark, ShieldCheck } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-security.jpg";
-import { CEO_NAME, CEO_PHOTO_URL, CEO_ROLE, LOGO_URL } from "./brand";
+import { LOGO_URL } from "./brand";
 
 const badges = [
   { icon: ShieldCheck, label: "Cyber Security" },
@@ -22,7 +23,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-navy opacity-80" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,transparent,var(--navy-deep)_85%)]" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-12 px-6 pt-40 pb-24 md:pt-48 md:pb-32 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+      <div className="relative mx-auto max-w-7xl px-6 pt-40 pb-24 md:pt-48 md:pb-32">
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <span className="mb-6 inline-flex items-center rounded-md bg-navy-foreground/95 px-4 py-2.5 shadow-elegant">
             <img
@@ -54,7 +55,7 @@ export function Hero() {
               </a>
             </Button>
             <Button variant="onNavy" size="xl" asChild>
-              <a href="#contact">Contact Us</a>
+              <Link to="/contact">Contact Us</Link>
             </Button>
           </div>
 
@@ -70,52 +71,6 @@ export function Hero() {
           </div>
         </div>
 
-        <div className="animate-in fade-in slide-in-from-bottom-10 space-y-6 duration-1000">
-          <div className="group rounded-lg border border-gold/30 glass-panel p-6 shadow-gold transition-all duration-300 hover:-translate-y-1">
-            <div className="flex items-center gap-5">
-              <img
-                src={CEO_PHOTO_URL}
-                alt={`${CEO_NAME}, ${CEO_ROLE} of Datta Infotech Consultants`}
-                width={1252}
-                height={1252}
-                className="size-24 shrink-0 rounded-md border border-gold/40 object-cover transition-transform duration-300 group-hover:scale-[1.03] sm:size-28"
-              />
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-gold">{CEO_ROLE}</p>
-                <h2 className="mt-1 font-display text-lg font-semibold text-navy-foreground">
-                  {CEO_NAME}
-                </h2>
-                <p className="mt-2 text-xs leading-relaxed text-navy-foreground/70">
-                  International Cyber Security Expert, Digital Forensics Specialist &amp; National
-                  Security Consultant.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-lg glass-panel p-8">
-          <h2 className="font-display text-lg font-semibold text-navy-foreground">
-            Trusted Advisory for Government &amp; Enterprise
-          </h2>
-          <p className="mt-3 text-sm leading-relaxed text-navy-foreground/70">
-            Strategic security consulting for government agencies, law enforcement, enterprises, and
-            international institutions.
-          </p>
-          <dl className="mt-7 grid grid-cols-2 gap-6">
-            {[
-              ["Government Agencies", "Advisory & policy support"],
-              ["Law Enforcement", "Forensic investigation support"],
-              ["Enterprises", "Cyber defence & resilience"],
-              ["Institutions", "Public safety programs"],
-            ].map(([title, desc]) => (
-              <div key={title}>
-                <dt className="text-sm font-semibold text-gold">{title}</dt>
-                <dd className="mt-1 text-xs text-navy-foreground/65">{desc}</dd>
-              </div>
-            ))}
-          </dl>
-          </div>
-        </div>
       </div>
     </section>
   );
