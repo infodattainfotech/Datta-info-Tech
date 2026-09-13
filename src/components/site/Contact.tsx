@@ -7,7 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeading } from "./SectionHeading";
 import { CONTACT } from "./data";
-import { CEO_NAME, CEO_PHOTO_URL, CEO_ROLE, LOGO_URL } from "./brand";
+import { LOGO_URL } from "./brand";
 
 export function Contact() {
   const [submitting, setSubmitting] = useState(false);
@@ -111,22 +111,6 @@ export function Contact() {
                     <Icon className="size-4" />
                   </a>
                 ))}
-              </div>
-            </div>
-
-            <div className="flex items-center gap-4 rounded-lg border border-border bg-card p-5 shadow-elegant transition-all duration-300 hover:-translate-y-1">
-              <img
-                src={CEO_PHOTO_URL}
-                alt={`${CEO_NAME}, ${CEO_ROLE} of Datta Infotech Consultants`}
-                loading="lazy"
-                className="size-20 rounded-md border border-gold/40 object-cover"
-              />
-              <div>
-                <p className="text-xs uppercase tracking-[0.18em] text-accent">{CEO_ROLE}</p>
-                <p className="mt-1 text-base font-semibold">{CEO_NAME}</p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  Direct advisory enquiries welcome.
-                </p>
               </div>
             </div>
 
