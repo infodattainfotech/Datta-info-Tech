@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Mail, Menu, Phone, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CONTACT, NAV_LINKS } from "./data";
@@ -42,7 +43,7 @@ export function Header() {
       >
 
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
-          <a href="#home" className="flex items-center gap-3">
+          <Link to="/" className="flex items-center gap-3">
             <img
               src={LOGO_URL}
               alt="Datta Infotech Consultants logo"
@@ -55,24 +56,23 @@ export function Header() {
                 Consultants
               </span>
             </span>
-          </a>
+          </Link>
 
           <ul className="hidden items-center gap-7 lg:flex">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a
-                  href={link.href}
-                  className="relative text-sm font-medium text-foreground/75 transition-colors hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-gold after:transition-all hover:after:w-full"
-                >
-                  {link.label}
-                </a>
+                {link.href.includes("#") ? (
+                  <a href={link.href} className="relative text-sm font-medium text-foreground/75 transition-colors hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-gold after:transition-all hover:after:w-full">{link.label}</a>
+                ) : (
+                  <Link to={link.href} activeProps={{ className: "text-foreground" }} className="relative text-sm font-medium text-foreground/75 transition-colors hover:text-foreground after:absolute after:-bottom-1.5 after:left-0 after:h-0.5 after:w-0 after:bg-gradient-gold after:transition-all hover:after:w-full">{link.label}</Link>
+                )}
               </li>
             ))}
           </ul>
 
           <div className="flex items-center gap-2">
             <Button variant="gold" size="lg" className="hidden sm:inline-flex" asChild>
-              <a href="#contact">Contact Now</a>
+              <Link to="/contact">Contact Now</Link>
             </Button>
             <Button
               variant="outline"
@@ -98,13 +98,11 @@ export function Header() {
             <ul className="mx-auto max-w-7xl px-6 py-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href} className="border-b border-border/60 last:border-0">
-                  <a
-                    href={link.href}
-                    onClick={() => setOpen(false)}
-                    className="block py-3 text-sm font-medium"
-                  >
-                    {link.label}
-                  </a>
+                  {link.href.includes("#") ? (
+                    <a href={link.href} onClick={() => setOpen(false)} className="block py-3 text-sm font-medium">{link.label}</a>
+                  ) : (
+                    <Link to={link.href} onClick={() => setOpen(false)} className="block py-3 text-sm font-medium">{link.label}</Link>
+                  )}
                 </li>
               ))}
             </ul>

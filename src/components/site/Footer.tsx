@@ -1,4 +1,5 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { CONTACT, NAV_LINKS } from "./data";
 import { LOGO_URL } from "./brand";
 
@@ -37,9 +38,11 @@ export function Footer() {
           <ul className="mt-5 space-y-3 text-sm text-navy-foreground/70">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
-                <a href={link.href} className="transition-colors hover:text-gold">
-                  {link.label === "About Us" ? "About" : link.label}
-                </a>
+                {link.href.includes("#") ? (
+                  <a href={link.href} className="transition-colors hover:text-gold">{link.label}</a>
+                ) : (
+                  <Link to={link.href} className="transition-colors hover:text-gold">{link.label}</Link>
+                )}
               </li>
             ))}
           </ul>
