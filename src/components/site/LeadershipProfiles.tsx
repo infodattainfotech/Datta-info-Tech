@@ -4,6 +4,7 @@ import { CONTACT, CEO_HIGHLIGHTS } from "./data";
 import {
   CEO_NAME,
   CEO_PHOTO_URL,
+  CEO_QUALIFICATIONS,
   CEO_ROLE,
   PARTNER_NAME,
   PARTNER_PHOTO_URL,
@@ -15,7 +16,7 @@ const profiles = [
   {
     name: CEO_NAME,
     role: CEO_ROLE,
-    qualifications: "International Security & Digital Forensics Leadership",
+    qualifications: CEO_QUALIFICATIONS,
     photo: CEO_PHOTO_URL,
     bio: "Adoni Venkata Ramana Rao is an award-winning security professional whose work spans cyber security consulting, digital forensics, homeland security, and national security advisory. He supports governments, institutions, law enforcement, and enterprises in building resilient security ecosystems.",
     focus: CEO_HIGHLIGHTS.slice(0, 4),
