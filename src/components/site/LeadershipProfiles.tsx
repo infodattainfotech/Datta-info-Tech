@@ -45,7 +45,11 @@ export function LeadershipProfiles() {
                 <div className="p-7 sm:p-8">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{profile.role}</p>
                   <h2 className="mt-2 text-2xl font-semibold leading-tight">{profile.name}</h2>
-                  <p className="mt-2 text-sm font-semibold text-primary">{profile.qualifications}</p>
+                  <ul className="mt-3 space-y-1">
+                    {profile.qualifications.map((qualification) => (
+                      <li key={qualification} className="text-sm font-semibold text-primary">{qualification}</li>
+                    ))}
+                  </ul>
                   <p className="mt-5 text-sm leading-relaxed text-muted-foreground">{profile.bio}</p>
                 </div>
               </div>
