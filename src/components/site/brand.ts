@@ -6,6 +6,12 @@ export const LOGO_URL = logoAsset.url;
 export const CEO_PHOTO_URL = ceoAsset.url;
 export const CEO_NAME = "Adoni Venkata Ramana Rao";
 export const CEO_ROLE = "Founder & CEO";
+export const CEO_QUALIFICATIONS = [
+  "MS (IT)",
+  "Graduate in Police Sciences (Law Enforcement & Protection), North America",
+  "Member of United Nations Academic Council",
+  "International Electoral Observer",
+];
 export const PARTNER_PHOTO_URL = partnerAsset.url;
 export const PARTNER_NAME = "Mrs. Dr. Anuradha Adoni";
 export const PARTNER_ROLE = "Partner & Director";

@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaGallery } from "@/components/site/MediaGallery";
+import { LeadershipStrip } from "@/components/site/LeadershipStrip";
 import { PageIntro } from "@/components/site/PageIntro";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
@@ -20,5 +21,5 @@ export const Route = createFileRoute("/media")({
 });
 
 function MediaPage() {
-  return <SiteLayout><PageIntro eyebrow="Newsroom" title="Media & Press Coverage" description="Published coverage of awards, national security contributions, cybercrime prevention, homeland security, and international engagement." /><MediaGallery /></SiteLayout>;
+  return <SiteLayout><PageIntro eyebrow="Newsroom" title="Media & Press Coverage" description="Published coverage of awards, national security contributions, cybercrime prevention, homeland security, and international engagement." /><MediaGallery /><LeadershipStrip /></SiteLayout>;
 }
