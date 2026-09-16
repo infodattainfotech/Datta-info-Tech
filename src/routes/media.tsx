@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MediaGallery } from "@/components/site/MediaGallery";
+import { LeadershipStrip } from "@/components/site/LeadershipStrip";
 import { PageIntro } from "@/components/site/PageIntro";
 import { SiteLayout } from "@/components/site/SiteLayout";
 
