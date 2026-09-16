@@ -41,8 +41,8 @@ export function LeadershipPreview() {
         <div className="mx-auto mt-14 grid max-w-5xl gap-7 md:grid-cols-2">
           {leaders.map((leader) => (
             <article key={leader.name} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
-              <div className="aspect-[5/4] overflow-hidden bg-surface">
-                <img src={leader.photo} alt={leader.alt} loading="lazy" className="size-full object-cover object-top transition-transform duration-500 hover:scale-[1.02]" />
+<div className="flex aspect-[5/4] items-center justify-center overflow-hidden bg-surface">
+                <img src={leader.photo} alt={leader.alt} loading="lazy" className="size-full object-contain" />
               </div>
               <div className="border-t-2 border-accent p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{leader.role}</p>

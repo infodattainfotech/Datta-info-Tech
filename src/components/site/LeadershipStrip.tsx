@@ -32,12 +32,12 @@ export function LeadershipStrip() {
               key={profile.name}
               className="flex flex-col gap-6 overflow-hidden rounded-lg border border-border bg-card p-6 shadow-elegant sm:flex-row sm:items-start"
             >
-              <div className="mx-auto size-40 shrink-0 overflow-hidden rounded-lg border-2 border-accent bg-surface sm:mx-0">
+<div className="mx-auto flex size-40 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2 border-accent bg-surface sm:mx-0">
                 <img
                   src={profile.photo}
                   alt={`Portrait of ${profile.name}`}
                   loading="lazy"
-                  className="size-full object-cover object-top"
+                  className="size-full object-contain"
                 />
               </div>
               <div className="min-w-0 text-center sm:text-left">
