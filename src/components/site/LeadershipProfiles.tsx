@@ -24,7 +24,7 @@ const profiles = [
   {
     name: PARTNER_NAME,
     role: PARTNER_ROLE,
-    qualifications: PARTNER_QUALIFICATIONS,
+    qualifications: [PARTNER_QUALIFICATIONS],
     photo: PARTNER_PHOTO_URL,
     bio: "Dr. Anuradha Adoni is an accomplished academic and technology professional. As Partner & Director, she contributes academic insight, technology expertise, and thoughtful leadership to the organisation’s consulting and institutional initiatives.",
     focus: ["Academic Leadership", "Technology Expertise", "Institutional Development", "Strategic Collaboration"],
