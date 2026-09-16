@@ -21,5 +21,5 @@ export const Route = createFileRoute("/media")({
 });
 
 function MediaPage() {
-  return <SiteLayout><PageIntro eyebrow="Newsroom" title="Media & Press Coverage" description="Published coverage of awards, national security contributions, cybercrime prevention, homeland security, and international engagement." /><MediaGallery /></SiteLayout>;
+  return <SiteLayout><PageIntro eyebrow="Newsroom" title="Media & Press Coverage" description="Published coverage of awards, national security contributions, cybercrime prevention, homeland security, and international engagement." /><MediaGallery /><LeadershipStrip /></SiteLayout>;
 }
