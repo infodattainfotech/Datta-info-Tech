@@ -1,10 +1,12 @@
 import { ArrowRight } from "lucide-react";
+import { GraduationCap } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { SectionHeading } from "./SectionHeading";
 import {
   CEO_NAME,
   CEO_PHOTO_URL,
+  CEO_QUALIFICATIONS,
   CEO_ROLE,
   PARTNER_NAME,
   PARTNER_PHOTO_URL,
@@ -18,6 +20,7 @@ const leaders = [
     role: CEO_ROLE,
     photo: CEO_PHOTO_URL,
     alt: `${CEO_NAME}, ${CEO_ROLE}`,
+    qualifications: CEO_QUALIFICATIONS,
     intro: "International cyber security expert, digital forensics specialist, and national security consultant.",
   },
   {
@@ -25,7 +28,8 @@ const leaders = [
     role: PARTNER_ROLE,
     photo: PARTNER_PHOTO_URL,
     alt: `${PARTNER_NAME}, ${PARTNER_ROLE}`,
-    intro: `${PARTNER_QUALIFICATIONS}. An accomplished academic and technology professional supporting the firm’s leadership and growth.`,
+    qualifications: [PARTNER_QUALIFICATIONS],
+    intro: "An accomplished academic and technology professional supporting the firm’s leadership and growth.",
   },
 ];
 
@@ -40,15 +44,23 @@ export function LeadershipPreview() {
         />
         <div className="mx-auto mt-14 grid max-w-5xl gap-7 md:grid-cols-2">
           {leaders.map((leader) => (
-            <article key={leader.name} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
-<div className="flex aspect-[5/4] items-center justify-center overflow-hidden bg-surface">
+            <article key={leader.name} className="flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
+              <div className="flex h-72 items-center justify-center overflow-hidden bg-surface sm:h-80">
                 <img src={leader.photo} alt={leader.alt} loading="lazy" className="size-full object-contain" />
               </div>
-              <div className="border-t-2 border-accent p-7">
+              <div className="flex flex-1 flex-col border-t-2 border-accent p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{leader.role}</p>
                 <h3 className="mt-2 text-xl font-semibold">{leader.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{leader.intro}</p>
-                <Button variant="navy" className="mt-6" asChild>
+                <ul className="mt-4 space-y-2">
+                  {leader.qualifications.map((qualification) => (
+                    <li key={qualification} className="flex items-start gap-2.5 text-sm leading-relaxed text-foreground">
+                      <GraduationCap className="mt-0.5 size-4 shrink-0 text-accent" aria-hidden="true" />
+                      <span>{qualification}</span>
+                    </li>
+                  ))}
+                </ul>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{leader.intro}</p>
+                <Button variant="navy" className="mt-6 self-start" asChild>
                   <Link to="/about">Read More <ArrowRight /></Link>
                 </Button>
               </div>
