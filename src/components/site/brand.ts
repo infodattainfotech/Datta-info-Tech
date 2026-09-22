@@ -1,6 +1,6 @@
 import logoAsset from "@/assets/datta-logo.asset.json";
 import ceoAsset from "@/assets/ceo-photo.asset.json";
-import partnerAsset from "@/assets/anuradha-adoni.png.asset.json";
+import partnerAsset from "@/assets/anuradha-adoni.jpg.asset.json";
 
 export const LOGO_URL = logoAsset.url;
 export const CEO_PHOTO_URL = ceoAsset.url;
