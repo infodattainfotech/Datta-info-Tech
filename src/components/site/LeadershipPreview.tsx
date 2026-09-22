@@ -46,7 +46,7 @@ export function LeadershipPreview() {
           {leaders.map((leader) => (
             <article key={leader.name} className="flex flex-col overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
               <div className="flex h-72 items-center justify-center overflow-hidden bg-surface sm:h-80">
-                <img src={leader.photo} alt={leader.alt} loading="lazy" className="size-full object-contain" />
+                <img src={leader.photo} alt={leader.alt} loading="eager" decoding="async" fetchPriority="high" className="size-full object-contain" />
               </div>
               <div className="flex flex-1 flex-col border-t-2 border-accent p-7">
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{leader.role}</p>
