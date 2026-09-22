@@ -1,22 +1,27 @@
 import { GraduationCap } from "lucide-react";
 import {
   CEO_NAME,
+  CEO_PHOTO_FALLBACK_URL,
   CEO_PHOTO_URL,
   CEO_QUALIFICATIONS,
   PARTNER_NAME,
+  PARTNER_PHOTO_FALLBACK_URL,
   PARTNER_PHOTO_URL,
   PARTNER_QUALIFICATIONS,
 } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 const profiles = [
   {
     name: CEO_NAME,
     photo: CEO_PHOTO_URL,
+    fallbackPhoto: CEO_PHOTO_FALLBACK_URL,
     qualifications: CEO_QUALIFICATIONS,
   },
   {
     name: PARTNER_NAME,
     photo: PARTNER_PHOTO_URL,
+    fallbackPhoto: PARTNER_PHOTO_FALLBACK_URL,
     qualifications: [PARTNER_QUALIFICATIONS],
   },
 ];
@@ -33,8 +38,9 @@ export function LeadershipStrip() {
               className="flex flex-col gap-6 overflow-hidden rounded-lg border border-border bg-card p-6 shadow-elegant sm:flex-row sm:items-start"
             >
 <div className="mx-auto flex size-40 shrink-0 items-center justify-center overflow-hidden rounded-lg border-2 border-accent bg-surface sm:mx-0">
-                <img
+                <BrandImage
                   src={profile.photo}
+                  fallbackSrc={profile.fallbackPhoto}
                   alt={`Portrait of ${profile.name}`}
                   loading="eager"
                   decoding="async"

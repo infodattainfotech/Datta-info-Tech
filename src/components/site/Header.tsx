@@ -4,7 +4,8 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { CONTACT, NAV_LINKS } from "./data";
-import { LOGO_URL } from "./brand";
+import { LOGO_FALLBACK_URL, LOGO_URL } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -44,8 +45,9 @@ export function Header() {
 
         <nav className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
           <Link to="/" className="flex items-center gap-3">
-            <img
+            <BrandImage
               src={LOGO_URL}
+              fallbackSrc={LOGO_FALLBACK_URL}
               alt="Datta Infotech Consultants logo"
               width={913}
               height={325}
@@ -89,8 +91,9 @@ export function Header() {
         {open && (
           <div className="border-t border-border bg-background lg:hidden">
             <div className="mx-auto flex max-w-7xl items-center gap-3 px-6 pt-4">
-              <img
+              <BrandImage
                 src={LOGO_URL}
+                fallbackSrc={LOGO_FALLBACK_URL}
                 alt="Datta Infotech Consultants logo"
                 className="h-8 w-auto"
               />

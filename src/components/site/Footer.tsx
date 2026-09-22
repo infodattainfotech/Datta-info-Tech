@@ -1,7 +1,8 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { CONTACT, NAV_LINKS } from "./data";
-import { LOGO_URL } from "./brand";
+import { LOGO_FALLBACK_URL, LOGO_URL } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 export function Footer() {
   return (
@@ -10,8 +11,9 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-3">
             <span className="rounded-md bg-navy-foreground/95 p-2.5">
-              <img
+              <BrandImage
                 src={LOGO_URL}
+                fallbackSrc={LOGO_FALLBACK_URL}
                 alt="Datta Infotech Consultants logo"
                 className="h-9 w-auto"
               />

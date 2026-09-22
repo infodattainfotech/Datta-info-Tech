@@ -2,7 +2,8 @@ import { ArrowRight, Globe2, Landmark, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import heroImage from "@/assets/hero-security.jpg";
-import { LOGO_URL } from "./brand";
+import { LOGO_FALLBACK_URL, LOGO_URL } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 const badges = [
   { icon: ShieldCheck, label: "Cyber Security" },
@@ -26,8 +27,9 @@ export function Hero() {
       <div className="relative mx-auto max-w-7xl px-6 pt-40 pb-24 md:pt-48 md:pb-32">
         <div className="animate-in fade-in slide-in-from-bottom-6 duration-1000">
           <span className="mb-6 inline-flex items-center rounded-md bg-navy-foreground/95 px-4 py-2.5 shadow-elegant">
-            <img
+            <BrandImage
               src={LOGO_URL}
+              fallbackSrc={LOGO_FALLBACK_URL}
               alt="Datta Infotech Consultants logo"
               width={913}
               height={325}
