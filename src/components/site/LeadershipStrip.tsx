@@ -36,7 +36,8 @@ export function LeadershipStrip() {
                 <img
                   src={profile.photo}
                   alt={`Portrait of ${profile.name}`}
-                  loading="lazy"
+                  loading="eager"
+                  decoding="async"
                   className="size-full object-contain"
                 />
               </div>
