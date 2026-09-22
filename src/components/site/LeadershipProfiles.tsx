@@ -3,14 +3,17 @@ import { Button } from "@/components/ui/button";
 import { CONTACT, CEO_HIGHLIGHTS } from "./data";
 import {
   CEO_NAME,
+  CEO_PHOTO_FALLBACK_URL,
   CEO_PHOTO_URL,
   CEO_QUALIFICATIONS,
   CEO_ROLE,
   PARTNER_NAME,
+  PARTNER_PHOTO_FALLBACK_URL,
   PARTNER_PHOTO_URL,
   PARTNER_QUALIFICATIONS,
   PARTNER_ROLE,
 } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 const profiles = [
   {
@@ -18,6 +21,7 @@ const profiles = [
     role: CEO_ROLE,
     qualifications: CEO_QUALIFICATIONS,
     photo: CEO_PHOTO_URL,
+    fallbackPhoto: CEO_PHOTO_FALLBACK_URL,
     bio: "Adoni Venkata Ramana Rao is an award-winning security professional whose work spans cyber security consulting, digital forensics, homeland security, and national security advisory. He supports governments, institutions, law enforcement, and enterprises in building resilient security ecosystems.",
     focus: CEO_HIGHLIGHTS.slice(0, 4),
   },
@@ -26,6 +30,7 @@ const profiles = [
     role: PARTNER_ROLE,
     qualifications: [PARTNER_QUALIFICATIONS],
     photo: PARTNER_PHOTO_URL,
+    fallbackPhoto: PARTNER_PHOTO_FALLBACK_URL,
     bio: "Dr. Anuradha Adoni is an accomplished academic and technology professional. As Partner & Director, she contributes academic insight, technology expertise, and thoughtful leadership to the organisation’s consulting and institutional initiatives.",
     focus: ["Academic Leadership", "Technology Expertise", "Institutional Development", "Strategic Collaboration"],
   },
@@ -40,7 +45,7 @@ export function LeadershipProfiles() {
             <article key={profile.name} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
               <div className="grid sm:grid-cols-[0.78fr_1.22fr]">
 <div className="flex min-h-80 items-center justify-center bg-surface">
-                  <img src={profile.photo} alt={`${profile.name}, ${profile.role}`} loading="eager" decoding="async" className="size-full object-contain" />
+                  <BrandImage src={profile.photo} fallbackSrc={profile.fallbackPhoto} alt={`${profile.name}, ${profile.role}`} loading="eager" decoding="async" className="size-full object-contain" />
                 </div>
                 <div className="p-7 sm:p-8">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{profile.role}</p>

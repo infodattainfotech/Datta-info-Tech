@@ -7,7 +7,8 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { SectionHeading } from "./SectionHeading";
 import { CONTACT } from "./data";
-import { LOGO_URL } from "./brand";
+import { LOGO_FALLBACK_URL, LOGO_URL } from "./brand";
+import { BrandImage } from "./BrandImage";
 
 export function Contact() {
   const [submitting, setSubmitting] = useState(false);
@@ -53,8 +54,9 @@ export function Contact() {
           <div className="space-y-5">
             <div className="rounded-lg bg-gradient-navy p-8 shadow-elegant">
               <span className="inline-flex rounded-md bg-navy-foreground/95 px-3 py-2">
-                <img
+                <BrandImage
                   src={LOGO_URL}
+                  fallbackSrc={LOGO_FALLBACK_URL}
                   alt="Datta Infotech Consultants logo"
                   className="h-9 w-auto"
                 />
