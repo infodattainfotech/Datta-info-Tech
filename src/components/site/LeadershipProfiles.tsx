@@ -40,7 +40,7 @@ export function LeadershipProfiles() {
             <article key={profile.name} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
               <div className="grid sm:grid-cols-[0.78fr_1.22fr]">
 <div className="flex min-h-80 items-center justify-center bg-surface">
-                  <img src={profile.photo} alt={`${profile.name}, ${profile.role}`} loading="lazy" className="size-full object-contain" />
+                  <img src={profile.photo} alt={`${profile.name}, ${profile.role}`} loading="eager" decoding="async" className="size-full object-contain" />
                 </div>
                 <div className="p-7 sm:p-8">
                   <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">{profile.role}</p>
