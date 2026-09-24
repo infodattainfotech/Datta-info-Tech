@@ -4,7 +4,7 @@ type BrandImageProps = ImgHTMLAttributes<HTMLImageElement> & {
   fallbackSrc?: string;
 };
 
-export function BrandImage({ src, fallbackSrc, alt, onError, ...props }: BrandImageProps) {
+export function BrandImage({ src, fallbackSrc, alt, onError, onLoad, ...props }: BrandImageProps) {
   const initialSrc = typeof src === "string" ? src : "";
   const [activeSrc, setActiveSrc] = useState(initialSrc);
   const [failed, setFailed] = useState(false);
@@ -34,6 +34,10 @@ export function BrandImage({ src, fallbackSrc, alt, onError, ...props }: BrandIm
       {...props}
       src={activeSrc}
       alt={alt}
+      onLoad={(event) => {
+        console.info(`[Datta Infotech image loaded] ${alt ?? "Brand image"}:`, activeSrc);
+        onLoad?.(event);
+      }}
       onError={(event) => {
         console.error(`[Datta Infotech image failed] ${alt ?? "Brand image"}:`, activeSrc);
         onError?.(event);

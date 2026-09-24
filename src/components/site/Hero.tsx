@@ -14,11 +14,13 @@ const badges = [
 export function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden bg-navy-deep">
-      <img
+      <BrandImage
         src={heroImage}
         alt="Global security operations centre monitoring a worldwide digital intelligence network"
         width={1920}
         height={1088}
+        loading="eager"
+        fetchPriority="high"
         className="absolute inset-0 size-full object-cover opacity-60"
       />
       <div className="absolute inset-0 bg-gradient-navy opacity-80" />
