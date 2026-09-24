@@ -5,6 +5,7 @@ import awardAsset from "@/assets/future-homeland-security-award.jpg.asset.json";
 import reformsAsset from "@/assets/un-security-council-reforms.jpg.asset.json";
 import felicitationAsset from "@/assets/homeland-security-felicitation.jpg.asset.json";
 import preventionAsset from "@/assets/cyber-crime-prevention-day.jpg.asset.json";
+import { BrandImage } from "./BrandImage";
 
 const categories = [
   "All Coverage",
@@ -79,7 +80,7 @@ export function MediaGallery() {
           {visibleItems.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
               <button type="button" onClick={() => setSelected(item)} className="group relative block w-full cursor-zoom-in overflow-hidden bg-surface text-left" aria-label={`Enlarge clipping: ${item.title}`}>
-                <img src={item.image} alt={`Newspaper clipping: ${item.title}`} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
+                <BrandImage src={item.image} alt={`Newspaper clipping: ${item.title}`} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
                 <span className="absolute bottom-4 right-4 grid size-10 place-items-center rounded-md bg-primary text-primary-foreground shadow-elegant"><Maximize2 className="size-4" /></span>
               </button>
               <div className="border-t border-border p-6">
@@ -96,7 +97,7 @@ export function MediaGallery() {
         <div className="fixed inset-0 z-[70] grid place-items-center bg-primary/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={selected.title} onClick={() => setSelected(null)}>
           <div className="relative max-h-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <Button variant="gold" size="icon" className="absolute right-3 top-3 z-10" onClick={() => setSelected(null)} aria-label="Close enlarged clipping"><X /></Button>
-            <img src={selected.image} alt={`Enlarged newspaper clipping: ${selected.title}`} className="max-h-[88vh] max-w-full rounded-md bg-card object-contain shadow-elegant" />
+            <BrandImage src={selected.image} alt={`Enlarged newspaper clipping: ${selected.title}`} className="max-h-[88vh] max-w-full rounded-md bg-card object-contain shadow-elegant" />
           </div>
         </div>
       )}
