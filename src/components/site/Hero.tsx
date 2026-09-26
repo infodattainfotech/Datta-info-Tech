@@ -1,7 +1,6 @@
 import { ArrowRight, Globe2, Landmark, ShieldCheck } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-security.jpg";
 import { LOGO_FALLBACK_URL, LOGO_URL } from "./brand";
 import { BrandImage } from "./BrandImage";
 
@@ -15,7 +14,8 @@ export function Hero() {
   return (
     <section id="home" className="relative isolate overflow-hidden bg-navy-deep">
       <BrandImage
-        src={heroImage}
+        src="/images/hero-security.jpg"
+        fallbackSrc={LOGO_FALLBACK_URL}
         alt="Global security operations centre monitoring a worldwide digital intelligence network"
         width={1920}
         height={1088}
