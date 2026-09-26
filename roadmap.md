@@ -1,0 +1,2 @@
+- [x] Move all images to public/images with fallbacks; audit all pages
+- [ ] Swap in newly uploaded logo, founder photo, partner photo; update favicon; verify; publish
