@@ -1,10 +1,7 @@
 import { useEffect, useState } from "react";
 import { CalendarDays, Maximize2, Newspaper, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import awardAsset from "@/assets/future-homeland-security-award.jpg.asset.json";
-import reformsAsset from "@/assets/un-security-council-reforms.jpg.asset.json";
-import felicitationAsset from "@/assets/homeland-security-felicitation.jpg.asset.json";
-import preventionAsset from "@/assets/cyber-crime-prevention-day.jpg.asset.json";
+import { LOGO_FALLBACK_URL } from "./brand";
 import { BrandImage } from "./BrandImage";
 
 const categories = [
@@ -25,28 +22,28 @@ const items = [
     title: "Selected for Future Homeland Security Technologies Award at SwaRaksha Mahotsav 2026",
     publication: "Capital Information",
     date: "04 May 2026",
-    image: awardAsset.url,
+    image: "/images/future-homeland-security-award.jpg",
     categories: ["Awards & Recognitions", "Newspaper Publications", "Homeland Security Awards", "Technology & Innovation Events"] as Category[],
   },
   {
     title: "Venkat Ramana Rao Advocates for India’s Role in UN Security Council Reforms",
     publication: "Deccan News Service",
     date: "Publication date not shown",
-    image: reformsAsset.url,
+    image: "/images/un-security-council-reforms.jpg",
     categories: ["Newspaper Publications", "National Security Contributions", "United Nations Related Activities"] as Category[],
   },
   {
     title: "Grand Felicitation to Homeland Security Award Recipient Adoni Venkata Ramana Rao",
     publication: "Capital Information",
     date: "26 May 2026",
-    image: felicitationAsset.url,
+    image: "/images/homeland-security-felicitation.jpg",
     categories: ["Awards & Recognitions", "Newspaper Publications", "National Security Contributions", "Cyber Crime Prevention Activities", "Homeland Security Awards"] as Category[],
   },
   {
     title: "Cyber Crime Prevention Day to United Nations",
     publication: "Deccan News Service",
     date: "Publication date not shown",
-    image: preventionAsset.url,
+    image: "/images/cyber-crime-prevention-day.jpg",
     categories: ["Newspaper Publications", "Cyber Crime Prevention Activities", "United Nations Related Activities"] as Category[],
   },
 ];
@@ -80,7 +77,7 @@ export function MediaGallery() {
           {visibleItems.map((item) => (
             <article key={item.title} className="overflow-hidden rounded-lg border border-border bg-card shadow-elegant">
               <button type="button" onClick={() => setSelected(item)} className="group relative block w-full cursor-zoom-in overflow-hidden bg-surface text-left" aria-label={`Enlarge clipping: ${item.title}`}>
-                <BrandImage src={item.image} alt={`Newspaper clipping: ${item.title}`} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
+                <BrandImage src={item.image} fallbackSrc={LOGO_FALLBACK_URL} alt={`Newspaper clipping: ${item.title}`} loading="lazy" className="aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]" />
                 <span className="absolute bottom-4 right-4 grid size-10 place-items-center rounded-md bg-primary text-primary-foreground shadow-elegant"><Maximize2 className="size-4" /></span>
               </button>
               <div className="border-t border-border p-6">
@@ -97,7 +94,7 @@ export function MediaGallery() {
         <div className="fixed inset-0 z-[70] grid place-items-center bg-primary/90 p-4 sm:p-8" role="dialog" aria-modal="true" aria-label={selected.title} onClick={() => setSelected(null)}>
           <div className="relative max-h-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <Button variant="gold" size="icon" className="absolute right-3 top-3 z-10" onClick={() => setSelected(null)} aria-label="Close enlarged clipping"><X /></Button>
-            <BrandImage src={selected.image} alt={`Enlarged newspaper clipping: ${selected.title}`} className="max-h-[88vh] max-w-full rounded-md bg-card object-contain shadow-elegant" />
+            <BrandImage src={selected.image} fallbackSrc={LOGO_FALLBACK_URL} alt={`Enlarged newspaper clipping: ${selected.title}`} className="max-h-[88vh] max-w-full rounded-md bg-card object-contain shadow-elegant" />
           </div>
         </div>
       )}
